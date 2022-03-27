@@ -18,6 +18,13 @@
     left: 1vw;
 }
 
+.fav-button {
+    display: flex;
+    position: absolute;
+    top: 7vh;
+    right: 1vw;
+}
+
 #closing-button:hover {
     cursor: pointer;
 }

@@ -1,6 +1,6 @@
 import requests
+from TMBD_API_KEY import TMBD_API_KEY
 
-TMBD_API_KEY = 'insert_key'
 IMAGE_BASE_PATH = 'https://image.tmdb.org/t/p/w300'
 
 def to_IMBD_id(imdb_id):

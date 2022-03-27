@@ -1,0 +1,42 @@
+.recommend-container {
+    position: absolute;
+    left: calc(50% + 500px/2 + 20px);
+    display: flex;
+}
+
+#recommend-button {
+    font-weight: bold;
+    color: white;
+    width: 200px;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    animation: button 5s infinite forwards;
+}
+
+#recommend-button:hover {
+    cursor: pointer;
+    box-shadow: 0 0 10px white;
+}
+
+@keyframes button {
+    0% {
+        background-color: #000080;
+    }
+    25% {
+        background-color: #0f0fb0;
+        
+    }
+    50% {
+        background-color: #000080;
+        
+    }
+    75% {
+        background-color: #0f0fb0;
+        
+    }
+    100% {
+        background-color: #000080;
+
+    }
+}

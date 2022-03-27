@@ -15,7 +15,10 @@ export default function MovieCards (props) {
             id="moviecards-image" 
             src={props.poster_path}/> 
             :
-             <h1>{props.title}</h1>
+            <img 
+            onClick={handleLangChange}
+            id="moviecards-image" 
+            src="https://i.imgur.com/Z7CTBVp.png"/> 
             }
             <h1 id="movie-title-cards">{props.title}</h1>
         </div>

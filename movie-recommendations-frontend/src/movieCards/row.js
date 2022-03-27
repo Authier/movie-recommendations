@@ -6,7 +6,8 @@ import "./row.css";
 
 export default function Row (props) {
     
-    const width = 300;
+    /* The width should match the width in the movieCards.css file! */
+    const width = 160 + 20;
     const [slideNumber, setSlideNumber] = React.useState(0);
     const lengthMovies = props.movies.length - Math.floor(window.innerWidth / width);
     const listRef = React.useRef();

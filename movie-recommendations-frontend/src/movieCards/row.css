@@ -1,5 +1,5 @@
 .cards-main {
-    margin-top: 80px;
+    margin-top: 30px;
 }
 
 .movies-main {
@@ -13,10 +13,12 @@
     
     /* transform: translateX(0px); */
     transition: all 1350ms;
-
+    
     padding-left: 60px;
     padding-right: 40px;
-    gap: 50px;
+
+    /* When the gap is changed the width in row.js should be changing */
+    gap: 20px;
 }
 
 

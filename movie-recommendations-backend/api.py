@@ -1,5 +1,3 @@
-from unittest import async_case
-
 from fastapi import FastAPI, Path
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -24,7 +22,7 @@ app.add_middleware(
 
 from movie_info_call import get_movie_info
 from sample_movies import array_sample_movies
-
+from movie_search import searchAPI
 
 
 def get_info_imdb(imdb_id):
@@ -34,4 +32,19 @@ def get_info_imdb(imdb_id):
 async def root():
     return array_sample_movies
 
+# For the Search Bar
+class Search(BaseModel):
+    search_term: str
 
+@app.post("/search")
+async def search(search_term: Search):
+    data = searchAPI(search_term.search_term)
+    return data
+
+class Recommend(BaseModel):
+    tmdb_ids: object
+
+@app.post("/recommend")
+async def recommend(tmdb_ids: Recommend):
+    print(tmdb_ids.tmdb_ids) # Here are the TMDB ids for their favorited movies.
+    return array_sample_movies

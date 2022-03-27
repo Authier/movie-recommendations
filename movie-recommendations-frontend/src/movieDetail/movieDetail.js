@@ -2,6 +2,7 @@ import React from "react";
 import './movieDetail.css';
 import { BsFillStarFill } from 'react-icons/bs';
 import { BiArrowBack } from 'react-icons/bi';
+import { MdFavoriteBorder, MdFavorite } from 'react-icons/md';
 
 // key={use_id}
 // id={use_id}
@@ -19,14 +20,44 @@ import { BiArrowBack } from 'react-icons/bi';
 // handleCardClick={handleCardClick}
 
 export default function MovieDetail (props) {
-    console.log(props.movieDetails)
+    let favorited = false;
+    const favoritedList = props.favorited;
+    for (let i = 0; i < favoritedList.length; i++) {
+        if (props.movieDetails.id === favoritedList[i]) {
+            favorited =  true;
+        }
+    }
+
+    const handleLangChange = () => {
+        const prop = props;
+        props.handleFavoriting(prop.movieDetails);
+    }
+
     return (
         <div className="movie-detail-container">
             <div className="closing-button"  onClick={props.close} >
-                <BiArrowBack size={70} 
+                <BiArrowBack 
+                size={70} 
                 id="closing-button" 
                 />
             </div>
+            {
+                favorited ? 
+                <div className="fav-button" onClick={handleLangChange}>
+                    <MdFavorite 
+                    size={70} 
+                    color="red"
+                    id="closing-button" 
+                    />
+                </div>
+                :
+                <div className="fav-button" onClick={handleLangChange}>
+                    <MdFavoriteBorder size={70} 
+                    id="closing-button" 
+                    />
+                </div>
+            }
+            
             <div className="movie-detail-inner-container">
                 <img id="movie-detail-poster" src={props.movieDetails.poster_path} />
                 <div className="movie-detail-info">
