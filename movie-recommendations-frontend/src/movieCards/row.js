@@ -8,7 +8,7 @@ export default function Row (props) {
     
     const width = 300;
     const [slideNumber, setSlideNumber] = React.useState(0);
-    const lengthMovies = props.movies.length - Math.floor(window.innerWidth / 300);
+    const lengthMovies = props.movies.length - Math.floor(window.innerWidth / width);
     const listRef = React.useRef();
 
     const handleClick = (direction) => {

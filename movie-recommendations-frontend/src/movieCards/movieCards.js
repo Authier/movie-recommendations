@@ -15,8 +15,9 @@ export default function MovieCards (props) {
             id="moviecards-image" 
             src={props.poster_path}/> 
             :
-             <h1>d</h1>
+             <h1>{props.title}</h1>
             }
+            <h1 id="movie-title-cards">{props.title}</h1>
         </div>
     )
 }

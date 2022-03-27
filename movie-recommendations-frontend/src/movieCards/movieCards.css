@@ -1,3 +1,8 @@
+.moviecards-photo {
+    background-image: radial-gradient(#002237, #002943);
+    border-radius: 25px;
+    box-shadow: 0 0 10px 0 black;
+}
 #moviecards-image {
     width: 250px;
     border-radius: 10px;
@@ -8,4 +13,10 @@
 #moviecards-image:hover {
     transform: scale(1.08);
     cursor: pointer;
+}
+
+#movie-title-cards {
+    text-align: center;
+    text-shadow: 2px 2px 2px black;
+    font-size: 20px;
 }
