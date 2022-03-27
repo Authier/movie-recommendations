@@ -11,13 +11,23 @@
     /* background-color: aqua; */
 }
 
+.closing-button {
+    display: flex;
+    position: absolute;
+    top: 7vh;
+    left: 1vw;
+}
+
+#closing-button:hover {
+    cursor: pointer;
+}
+
 .movie-detail-inner-container {
     display: flex;
-    height: 55vh;
-    width: 50vw;
-    background-image: radial-gradient(#5a1660, #2d053e);
-    border: black 1px solid;
-    box-shadow: 0 0 23px 2px black;
+    height: 45vh;
+    width: 45vw;
+    /* background-image: radial-gradient(#320037, #0b0010);
+    border: #210023 5px solid; */
     padding: 30px;
     margin: 10px;
     border-radius: 25px;
@@ -39,7 +49,7 @@
 }
 
 #movie-detail-title {
-    font-size: 50px;
+    font-size: 30px;
     font-style: italic;
 
     text-shadow: 10px 10px 10px black;
@@ -50,8 +60,35 @@
 }
 
 .movie-detail-description { 
+    display: flex;
+    flex-direction: column;
     margin-top: 10px;
     height: 100%;
-    background-color: red;
+    /* background-color: red; */
 }
 
+.movie-detail-d2 {
+    margin-top: 30px;
+    display: flex;
+    font-size: 20px;
+    /* border: solid black; */
+    justify-content: space-between;   
+}
+
+.movie-detail-d2-children {
+    display: flex;
+    justify-content: center;
+
+    /* border: blue solid; */
+    width: 33%;
+}
+
+.movie-detail-overview {
+    display: block;
+    text-indent: 30px;
+    /* border: solid red; */
+    font-size : 20px;
+    height: 100%;
+    overflow-y: auto;
+    /* font-size: 25px; */
+}
