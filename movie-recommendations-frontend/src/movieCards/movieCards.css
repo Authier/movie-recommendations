@@ -1,0 +1,10 @@
+#moviecards-image {
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px 3px black;
+    transition: transform 450ms;
+}
+
+#moviecards-image:hover {
+    transform: scale(1.08);
+}
