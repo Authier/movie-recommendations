@@ -4,7 +4,7 @@
     justify-content: space-between;
 
     background-image: radial-gradient(#003D63, #0f4261);
-    /* box-shadow: 0 0 10px 0 black; */
+    box-shadow: 0 0 10px 0 black;
 
     padding: 20px;
     height: 20px;

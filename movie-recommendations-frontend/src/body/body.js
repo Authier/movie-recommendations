@@ -2,6 +2,8 @@ import React from "react";
 import axios from 'axios';
 
 import MovieCards from "../movieCards/movieCards";
+
+import MovieDetail from "../movieDetail/movieDetail";
 import Row from "../movieCards/row.js";
 import { nanoid } from 'nanoid'
 
@@ -13,7 +15,14 @@ const api = axios.create({
 
 export default function Body () {
     
+    const [movieClicked, setMovieClicked] = React.useState(false)
+    const [movieDetails, setMovieDetails] = React.useState()
     const [movies, setMovies] = React.useState([])
+
+    function handleCardClick (event) {
+        setMovieDetails(event)
+        setMovieClicked(true)
+    }
 
     React.useEffect(() => {
         api.get("/").then(res => {
@@ -36,6 +45,7 @@ export default function Body () {
                         poster_path={moviesInfo.poster_path}
                         vote_average={moviesInfo.vote_average}
                         original_language={moviesInfo.original_language}
+                        handleCardClick={handleCardClick}
                         />
                     )
                 })
@@ -45,7 +55,20 @@ export default function Body () {
 
     return (
         <div>
-            <Row movies={movies} header="Your Picks."/>
+            {
+                movieClicked ? 
+                <MovieDetail 
+                movieDetails={movieDetails}
+                close={() => setMovieClicked(false)}
+                />
+                : 
+                <>
+                <Row movies={movies} header="Your Picks."/>
+                <Row movies={movies} header="Your Picks."/>
+                <Row movies={movies} header="Your Picks."/>
+                <Row movies={movies} header="Your Picks."/>
+                </>
+            }
         </div>
     )
 }
